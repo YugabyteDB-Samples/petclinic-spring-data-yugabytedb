@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+  th:replace="~{fragments/layout :: layout (~{::body},'owners')}">
+
+  <body>
+
+
+    <h2>Owner Information</h2>
+
+
+    <table class="table table-striped" th:object="${owner}">
+      <tr>
+        <th>Name</th>
+        <td><b th:text="*{firstName + ' ' + lastName}"></b></td>
+      </tr>
+      <tr>
+        <th>Address</th>
+        <td th:text="*{address}" /></td>
+      </tr>
+      <tr>
+        <th>City</th>
+        <td th:text="*{city}" /></td>
+      </tr>
+      <tr>
+        <th>Telephone</th>
+        <td th:text="*{telephone}" /></td>
+      </tr>
+    </table>
+
+    <a th:href="@{{id}/edit(id=${owner.id})}" class="btn btn-default">Edit
+      Owner</a>
+    <a th:href="@{{id}/pets/new(id=${owner.id})}" class="btn btn-default">Add
+      New Pet</a>
+
+    <br />
+    <br />
+    <br />
+    <h2>Pets and Visits</h2>
+
+    <table class="table table-striped">
+
+      <tr th:each="pet : ${pets}">
+        <td valign="top">
+          <dl class="dl-horizontal">
+            <dt>Name</dt>
+            <dd th:text="${pet.pet.name}" /></dd>
+            <dt>Birth Date</dt>
+            <dd
+              th:text="${#temporals.format(pet.pet.birthDate, 'yyyy-MM-dd')}" /></dd>
+            <dt>Type</dt>
+            <dd th:text="${pet.type.name}" /></dd>
+          </dl>
+        </td>
+        <td valign="top">
+          <table class="table-condensed">
+            <thead>
+              <tr>
+                <th>Visit Date</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tr th:each="visit : ${pet.visits}">
+              <td th:text="${#temporals.format(visit.date, 'yyyy-MM-dd')}"></td>
+              <td th:text="${visit?.description}"></td>
+            </tr>
+            <tr>
+              <td><a
+                th:href="@{{ownerId}/pets/{petId}/edit(ownerId=${owner.id},petId=${pet.pet.id})}">Edit
+                  Pet</a></td>
+              <td><a
+                th:href="@{{ownerId}/pets/{petId}/visits/new(ownerId=${owner.id},petId=${pet.pet.id})}">Add
+                  Visit</a></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+    </table>
+    
+    <table>
+			<tr>
+				<th>API</th>
+				<th>Functionality</th>
+				<th>Tables</th>
+				<th>Ysql Repository Method</th>
+				<th>Ysql Repository Generated Query</th>
+			</tr>
+			<tr>
+				<td><a href="https://github.com/ssherwood/spring-petclinic-data-jdbc/blob/s1p2021/src/main/java/org/springframework/samples/petclinic/web/PetController.java#L88" target="_blank"
+						rel="noopener noreferrer">/Owners</a></td>
+				<td>Owner and Pet Details</td>
+				<td>pet, owner</td>
+				<td>
+					<p>
+						<a href="https://github.com/ssherwood/spring-petclinic-data-jdbc/blob/s1p2021/src/main/java/org/springframework/samples/petclinic/pet/PetRepository.java#L39" target="_blank"
+						rel="noopener noreferrer">PetRepository.findByOwnerId()
+					 	</a>
+					 </p>
+					 <p>
+						<a href="https://github.com/ssherwood/spring-petclinic-data-jdbc/blob/s1p2021/src/main/java/org/springframework/samples/petclinic/pet/PetRepository.java#L41" target="_blank"
+						rel="noopener noreferrer">PetRepository.findByOwnerIdAndName()
+					 	</a>
+					 </p>				
+				</td>
+				<td><p>SELECT * FROM pet WHERE owner_id = ?</p>
+				<p>SELECT * FROM pet WHERE owner_id = :ownerId AND name = :name</p></td>
+			</tr>
+			<tr>
+				<td><a href="https://github.com/ssherwood/spring-petclinic-data-jdbc/blob/s1p2021/src/main/java/org/springframework/samples/petclinic/web/PetController.java#L88" target="_blank"
+						rel="noopener noreferrer">/pets/new</a></td>
+				<td>Add a new Pet</td>
+				<td>pet, owner, pet_type</td>
+				<td><a href="https://github.com/ssherwood/spring-petclinic-data-jdbc/blob/s1p2021/src/main/java/org/springframework/samples/petclinic/pet/PetRepository.java" target="_blank"
+						rel="noopener noreferrer">PetRepository.save()
+					 	</a></td>
+				<td>INSERT INTO pet</td>
+			</tr>
+			<tr>
+				<td><a
+					href="https://github.com/ssherwood/spring-petclinic-data-jdbc/blob/s1p2021/src/main/java/org/springframework/samples/petclinic/web/VisitController.java#L92"
+					target="_blank" rel="noopener noreferrer">/owners/{ownerId}/pets/{petId}/visits/new</a></td>
+				<td>Find Vet visits</td>
+				<td>Visit, pet, owner</td>
+				<td>
+					<p>
+						<a
+							href="https://github.com/ssherwood/spring-petclinic-data-jdbc/blob/s1p2021/src/main/java/org/springframework/samples/petclinic/owner/OwnerRepository.java"
+							target="_blank" rel="noopener noreferrer">OwnerRepository.findById()
+						</a>
+					</p>
+					<p>
+						<a
+							href="https://github.com/ssherwood/spring-petclinic-data-jdbc/blob/s1p2021/src/main/java/org/springframework/samples/petclinic/pet/PetRepository.java#L39"
+							target="_blank" rel="noopener noreferrer">PetRepository.findByOwnerId()
+						</a>
+					</p>
+					<p>
+						<a
+							href="https://github.com/ssherwood/spring-petclinic-data-jdbc/blob/s1p2021/src/main/java/org/springframework/samples/petclinic/visit/VisitRepository.java#L45"
+							target="_blank" rel="noopener noreferrer">VisitRepository.findByPetId()
+						</a>
+					</p>
+				</td>
+				<td><p>SELECT "owner"."id" AS "id", "owner"."city" AS
+						"city", "owner"."address" AS "address", "owner"."last_name" AS
+						"last_name", "owner"."first_name" AS "first_name",
+						"owner"."telephone" AS "telephone" FROM "owner" WHERE "owner"."id"
+						= ?</p>
+					<p>SELECT * FROM pet WHERE owner_id = ?</p>
+					<p>SELECT * FROM visit WHERE pet_id = ?</p></td>
+			</tr>
+	</table>
+
+  </body>
+
+</html>

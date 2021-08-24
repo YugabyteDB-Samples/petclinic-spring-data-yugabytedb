@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+  th:replace="~{fragments/layout :: layout (~{::body},'vets')}">
+
+<body>
+
+  <h2>Veterinarians</h2>
+
+  <table id="vets" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Specialties</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="vet : ${vets.vets}">
+        <td th:text="${vet.firstName + ' ' + vet.lastName}"></td>
+        <td><span th:each="specialty : ${vet.specialties}"
+          th:text="${specialty.name + ' '}" /> <span
+          th:if="${vet.nrOfSpecialties == 0}">none</span></td>
+      </tr>
+    </tbody>
+  </table>
+	<table>
+		<tr>
+			<th>API</th>
+			<th>Functionality</th>
+			<th>Tables</th>
+			<th>Ysql Repository Method</th>
+			<th>Ysql Repository Generated Query</th>
+		</tr>
+		<tr>
+			<td><a href="https://github.com/ssherwood/spring-petclinic-data-jdbc/blob/s1p2021/src/main/java/org/springframework/samples/petclinic/web/VetController.java#L50" target="_blank"
+					rel="noopener noreferrer">/vets</a></td>
+			<td>Vet Specialty</td>
+			<td>vet</td>
+			<td><a href="https://github.com/ssherwood/spring-petclinic-data-jdbc/blob/s1p2021/src/main/java/org/springframework/samples/petclinic/vet/SpecialtyRepository.java#L35" target="_blank"
+					rel="noopener noreferrer">SpecialtyRepository.findById()</a></td>
+			<td>SELECT "specialty"."id" AS "id", "specialty"."name" AS "name" FROM "specialty" WHERE "specialty"."id" = ?</td>
+		</tr>
+	</table>
+</body>
+</html>
