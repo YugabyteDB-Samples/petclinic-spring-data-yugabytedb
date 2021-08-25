@@ -1,6 +1,6 @@
 # Spring PetClinic Sample Application built with Spring Data Yugabyte
 
-[Spring PetClinic Application](/images/petclinic.png)
+![Spring PetClinic Application](/images/petclinic.png)
 
 This is a branch of [spring-petclinic-data-jdbc](https://github.com/spring-petclinic/spring-petclinic-data-jdbc)
 which is itself a branch of the official [Spring PetClinic](https://github.com/spring-projects/spring-petclinic) application with domain & persistence layer built with [Spring Data YugabyteDB YSQL](https://projects.spring.io/spring-data-jdbc/)
