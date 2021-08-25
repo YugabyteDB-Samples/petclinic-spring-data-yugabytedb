@@ -22,6 +22,13 @@ Check original project [readme](https://github.com/spring-projects/spring-petcli
 
 - Setup the Yugabyte cloud instance to allow the IP list where the app will be hosted.
 
+- Downlaod the root certificate of Yugabyte cloud instance and place it in `~/.postgresql` directory.
+
+```bash
+$ mv ~/Downloads/root.cer ~/.postgresql/root.crt
+
+```
+
 - Retrieve the Yugabyte Cloud credentials and Configure [application.yaml](/src/main/resources/application.yaml)
 
 ```java
@@ -36,7 +43,7 @@ yugabyte:
 ```
 - Run the app (go the root of repo):
   ```bash
-  ./mvnw spring-boot:run
+  $ ./mvnw spring-boot:run
   ```
 
   Flyway will configure the Yugabyte database with Petclinic Schema and load sample data.
