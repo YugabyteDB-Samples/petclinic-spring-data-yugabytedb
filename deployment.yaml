@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: petclinic-sdyb-app
+  labels:
+    app: petclinic
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: petclinic
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: petclinic
+        version: v1
+    spec:
+      containers:
+      - name: petclinic-sdyb-app
+        image: nchandrappa/petclinic-sdyb-app:1.0.0
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: petclinic-sdyb-app-svc
+spec:
+  selector:
+    app: petclinic
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: petclinic-sdyb-app-lb
+spec:
+  selector:
+    app: petclinic
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: LoadBalancer

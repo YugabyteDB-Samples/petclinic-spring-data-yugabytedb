@@ -1,0 +1,9 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: cart-microservice-properties
+data:
+  yugabyte.datasource.url: jdbc:postgresql://8bd2c228-de3c-4808-8a99-xxxxxx.cloudportal.yugabyte.com:5433/yugabyte?ssl=true&sslmode=verify-full
+  yugabyte.datasource.load-balance: true
+  yugabyte.datasource.username: admin
+  yugabyte.datasource.password: 
