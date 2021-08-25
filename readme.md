@@ -18,11 +18,11 @@ Check original project [readme](https://github.com/spring-projects/spring-petcli
 
 # Running the app yourself
 
-- Deploy [Yugabyte Cloud Instance.](https://cloudportal.yugabyte.com/)
+- Create a Free tier instance on[Yugabyte Cloud.](https://cloudportal.yugabyte.com/)
 
 - Setup the Yugabyte cloud instance to allow the IP list where the app will be hosted.
 
-- Downlaod the root certificate of Yugabyte cloud instance and place it in `~/.postgresql` directory.
+- Download the root certificate of Yugabyte cloud instance and place it in `~/.postgresql` directory.
 
 ```bash
 $ mv ~/Downloads/root.cer ~/.postgresql/root.crt
@@ -31,17 +31,17 @@ $ mv ~/Downloads/root.cer ~/.postgresql/root.crt
 
 - Retrieve the Yugabyte Cloud credentials and Configure [application.yaml](/src/main/resources/application.yaml)
 
-```java
+	```java
+	yugabyte:
+	  datasource:
+	    url: jdbc:postgresql://8bd2c228-de3c-4808-8a99-xxxxxxxxx.cloudportal.yugabyte.com:5433/petclinic?ssl=true&sslmode=verify-full
+	    load-balance: true
+	    username: admin
+	    password: 
+	```
 
-yugabyte:
-  datasource:
-    url: jdbc:postgresql://8bd2c228-de3c-4808-8a99-xxxxxxxxx.cloudportal.yugabyte.com:5433/petclinic?ssl=true&sslmode=verify-full
-    load-balance: true
-    username: admin
-    password: 
-
-```
 - Run the app (go the root of repo):
+
   ```bash
   $ ./mvnw spring-boot:run
   ```
