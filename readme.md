@@ -29,7 +29,7 @@ $ mv ~/Downloads/root.cer ~/.postgresql/root.crt
 
 ```
 
-- Retrieve the Yugabyte Cloud credentials and Configure [application.yaml](/src/main/resources/application.yaml)
+- Retrieve the Yugabyte Cloud credentials and Configure [application.yml](/src/main/resources/application.yml)
 
 	```java
 	yugabyte:
