@@ -12,10 +12,11 @@ spring:
 
 yugabyte:
   datasource:
-    url: jdbc:postgresql://127.0.0.1:5433,127.0.0.2:5433,127.0.0.3:5433/yugabyte
+    # url: jdbc:postgresql://127.0.0.1:5433,127.0.0.2:5433,127.0.0.3:5433/yugabyte
+    url: jdbc:postgresql://8bd2c228-de3c-4808-8a99-xxxxxxxxx.cloudportal.yugabyte.com:5433/petclinic?ssl=true&sslmode=verify-full
     load-balance: true
-    username: yugabyte
-    password: yugabyte
+    username: admin
+    password: 
 
 management:
   endpoints:

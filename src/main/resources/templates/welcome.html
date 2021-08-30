@@ -24,46 +24,46 @@
 					<th>Ysql Repository Generated Query</th>
 				</tr>
 				<tr>
-					<td><a href="https://github.com/ssherwood/spring-petclinic-data-jdbc/blob/s1p2021/src/main/java/org/springframework/samples/petclinic/web/OwnerController.java#L72" target="_blank"
+					<td><a href="https://github.com/yugabyte/petclinic-spring-data-yugabytedb/tree/main/src/main/java/org/springframework/samples/petclinic/web/OwnerController.java#L72" target="_blank"
 							rel="noopener noreferrer">/owners/new</a></td>
 					<td>Add an Owner</td>
 					<td>owner</td>
-					<td><a href="https://github.com/ssherwood/spring-petclinic-data-jdbc/blob/s1p2021/src/main/java/org/springframework/samples/petclinic/owner/OwnerRepository.java" target="_blank"
+					<td><a href="https://github.com/yugabyte/petclinic-spring-data-yugabytedb/tree/main/src/main/java/org/springframework/samples/petclinic/owner/OwnerRepository.java" target="_blank"
 							rel="noopener noreferrer">OwnerRepository.save()</a></td>
 					<td>INSERT INTO owner</td>
 				</tr>
 				<tr>
-					<td><a href="https://github.com/ssherwood/spring-petclinic-data-jdbc/blob/s1p2021/src/main/java/org/springframework/samples/petclinic/web/OwnerController.java#L88" target="_blank"
+					<td><a href="https://github.com/yugabyte/petclinic-spring-data-yugabytedb/tree/main/src/main/java/org/springframework/samples/petclinic/web/OwnerController.java#L88" target="_blank"
 							rel="noopener noreferrer">/Owners/find</a></td>
 					<td>Find Owner by Last Name</td>
 					<td>owner</td>
-					<td><a href="https://github.com/ssherwood/spring-petclinic-data-jdbc/blob/s1p2021/src/main/java/org/springframework/samples/petclinic/owner/OwnerRepository.java" target="_blank"
+					<td><a href="https://github.com/yugabyte/petclinic-spring-data-yugabytedb/tree/main/src/main/java/org/springframework/samples/petclinic/owner/OwnerRepository.java" target="_blank"
 							rel="noopener noreferrer">OwnerRepository.findByLastName()</a></td>
 					<td><p>SELECT * FROM owner WHERE last_name LIKE concat(:lastName,'%')</p></td>
 				</tr>
 				<tr>
-					<td><a href="https://github.com/ssherwood/spring-petclinic-data-jdbc/blob/s1p2021/src/main/java/org/springframework/samples/petclinic/web/PetController.java#L88" target="_blank"
+					<td><a href="https://github.com/yugabyte/petclinic-spring-data-yugabytedb/tree/main/src/main/java/org/springframework/samples/petclinic/web/PetController.java#L88" target="_blank"
 							rel="noopener noreferrer">/pets/new</a></td>
 					<td>Add a new Pet</td>
 					<td>pet, owner, pet_type</td>
-					<td><a href="https://github.com/ssherwood/spring-petclinic-data-jdbc/blob/s1p2021/src/main/java/org/springframework/samples/petclinic/pet/PetRepository.java" target="_blank"
+					<td><a href="https://github.com/yugabyte/petclinic-spring-data-yugabytedb/tree/main/src/main/java/org/springframework/samples/petclinic/pet/PetRepository.java" target="_blank"
 							rel="noopener noreferrer">PetRepository.save()
 						 	</a></td>
 					<td>INSERT INTO pet</td>
 				</tr>
 				<tr>
-					<td><a href="https://github.com/ssherwood/spring-petclinic-data-jdbc/blob/s1p2021/src/main/java/org/springframework/samples/petclinic/web/PetController.java#L88" target="_blank"
+					<td><a href="https://github.com/yugabyte/petclinic-spring-data-yugabytedb/tree/main/src/main/java/org/springframework/samples/petclinic/web/PetController.java#L88" target="_blank"
 							rel="noopener noreferrer">/Owners</a></td>
 					<td>Owner and Pet Details</td>
 					<td>pet, owner</td>
 					<td>
 						<p>
-							<a href="https://github.com/ssherwood/spring-petclinic-data-jdbc/blob/s1p2021/src/main/java/org/springframework/samples/petclinic/pet/PetRepository.java#L39" target="_blank"
+							<a href="https://github.com/yugabyte/petclinic-spring-data-yugabytedb/tree/main/src/main/java/org/springframework/samples/petclinic/pet/PetRepository.java#L39" target="_blank"
 							rel="noopener noreferrer">PetRepository.findByOwnerId()
 						 	</a>
 						 </p>
 						 <p>
-							<a href="https://github.com/ssherwood/spring-petclinic-data-jdbc/blob/s1p2021/src/main/java/org/springframework/samples/petclinic/pet/PetRepository.java#L41" target="_blank"
+							<a href="https://github.com/yugabyte/petclinic-spring-data-yugabytedb/tree/main/src/main/java/org/springframework/samples/petclinic/pet/PetRepository.java#L41" target="_blank"
 							rel="noopener noreferrer">PetRepository.findByOwnerIdAndName()
 						 	</a>
 						 </p>				
@@ -72,41 +72,41 @@
 					<p>SELECT * FROM pet WHERE owner_id = :ownerId AND name = :name</p></td>
 				</tr>
 				<tr>
-					<td><a href="https://github.com/ssherwood/spring-petclinic-data-jdbc/blob/s1p2021/src/main/java/org/springframework/samples/petclinic/web/VisitController.java#L92" target="_blank"
+					<td><a href="https://github.com/yugabyte/petclinic-spring-data-yugabytedb/tree/main/src/main/java/org/springframework/samples/petclinic/web/VisitController.java#L92" target="_blank"
 							rel="noopener noreferrer">/owners/{ownerId}/pets/{petId}/visits/new</a></td>
 					<td>Add Vet visit</td>
 					<td>visit, pet</td>
-					<td><a href="https://github.com/ssherwood/spring-petclinic-data-jdbc/blob/s1p2021/src/main/java/org/springframework/samples/petclinic/visit/VisitRepository.java" target="_blank"
+					<td><a href="https://github.com/yugabyte/petclinic-spring-data-yugabytedb/tree/main/src/main/java/org/springframework/samples/petclinic/visit/VisitRepository.java" target="_blank"
 							rel="noopener noreferrer">VisitRepository.save()</a></td>
 					<td>INSERT INTO visit</td>
 				</tr>
 				<tr>
-					<td><a href="https://github.com/ssherwood/spring-petclinic-data-jdbc/blob/s1p2021/src/main/java/org/springframework/samples/petclinic/web/VetController.java#L50" target="_blank"
+					<td><a href="https://github.com/yugabyte/petclinic-spring-data-yugabytedb/tree/main/src/main/java/org/springframework/samples/petclinic/web/VetController.java#L50" target="_blank"
 							rel="noopener noreferrer">/vets</a></td>
 					<td>Vet Specialty</td>
 					<td>vet</td>
-					<td><a href="https://github.com/ssherwood/spring-petclinic-data-jdbc/blob/s1p2021/src/main/java/org/springframework/samples/petclinic/vet/SpecialtyRepository.java#L35" target="_blank"
+					<td><a href="https://github.com/yugabyte/petclinic-spring-data-yugabytedb/tree/main/src/main/java/org/springframework/samples/petclinic/vet/SpecialtyRepository.java#L35" target="_blank"
 							rel="noopener noreferrer">SpecialtyRepository.findById()</a></td>
 					<td>SELECT "specialty"."id" AS "id", "specialty"."name" AS "name" FROM "specialty" WHERE "specialty"."id" = ?</td>
 				</tr>
 				<tr>
-					<td><a href="https://github.com/ssherwood/spring-petclinic-data-jdbc/blob/s1p2021/src/main/java/org/springframework/samples/petclinic/web/VisitController.java#L92" target="_blank"
+					<td><a href="https://github.com/yugabyte/petclinic-spring-data-yugabytedb/tree/main/src/main/java/org/springframework/samples/petclinic/web/VisitController.java#L92" target="_blank"
 							rel="noopener noreferrer">/owners/{ownerId}/pets/{petId}/visits/new</a></td>
 					<td>Find Vet visits</td>
 					<td>Visit, pet, owner</td>
 					<td>
 						<p>
-							<a href="https://github.com/ssherwood/spring-petclinic-data-jdbc/blob/s1p2021/src/main/java/org/springframework/samples/petclinic/owner/OwnerRepository.java" target="_blank"
+							<a href="https://github.com/yugabyte/petclinic-spring-data-yugabytedb/tree/main/src/main/java/org/springframework/samples/petclinic/owner/OwnerRepository.java" target="_blank"
 							rel="noopener noreferrer">OwnerRepository.findById()
 							</a>
 						</p>
 						<p>
-							<a href="https://github.com/ssherwood/spring-petclinic-data-jdbc/blob/s1p2021/src/main/java/org/springframework/samples/petclinic/pet/PetRepository.java#L39" target="_blank"
+							<a href="https://github.com/yugabyte/petclinic-spring-data-yugabytedb/tree/main/src/main/java/org/springframework/samples/petclinic/pet/PetRepository.java#L39" target="_blank"
 							rel="noopener noreferrer">PetRepository.findByOwnerId()
 							</a>
 						</p>
 						<p>
-							<a href="https://github.com/ssherwood/spring-petclinic-data-jdbc/blob/s1p2021/src/main/java/org/springframework/samples/petclinic/visit/VisitRepository.java#L45" target="_blank"
+							<a href="https://github.com/yugabyte/petclinic-spring-data-yugabytedb/tree/main/src/main/java/org/springframework/samples/petclinic/visit/VisitRepository.java#L45" target="_blank"
 							rel="noopener noreferrer">VisitRepository.findByPetId()
 							</a>
 						</p>
