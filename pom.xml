@@ -88,7 +88,7 @@
         <dependency>
             <groupId>com.yugabyte</groupId>
             <artifactId>spring-data-yugabytedb-ysql</artifactId>
-            <version>2.3.0-RC1.b5</version>
+            <version>2.3.0</version>
             <exclusions>
                 <exclusion>
                     <groupId>com.yugabyte</groupId>
@@ -102,8 +102,8 @@
         </dependency>
         <dependency>
             <groupId>com.yugabyte</groupId>
-            <artifactId>testcontainer-yugabyte</artifactId>
-            <version>1.0.0-beta.2</version>
+            <artifactId>testcontainers-yugabytedb</artifactId>
+            <version>1.0.0-beta-3</version>
             <scope>test</scope>
         </dependency>
         <dependency>
