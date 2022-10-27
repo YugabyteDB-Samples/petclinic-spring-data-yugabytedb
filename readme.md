@@ -18,7 +18,7 @@ Check original project [readme](https://github.com/spring-projects/spring-petcli
 
 # Running the app yourself
 
-- Create a Free tier instance on[Yugabyte Cloud.](https://cloudportal.yugabyte.com/)
+- Create a [free tier instance of YugabyteDB Managed](https://cloud.yugabyte.com/signup).
 
 - Setup the Yugabyte cloud instance to allow the IP list where the app will be hosted.
 
